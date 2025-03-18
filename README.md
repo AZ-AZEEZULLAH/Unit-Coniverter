@@ -30,7 +30,7 @@ This **Unit Converter App** provides an easy and interactive way to convert unit
 
 1. Clone the repository:
     ```
-    git clone https://github.com/AZ-AZEEZULLAH/unit-converter-app.git
+    git clone https://github.com/AZ-AZEEZULLAH/Unit-Converter.git
     ```
 
 2. Install dependencies:
