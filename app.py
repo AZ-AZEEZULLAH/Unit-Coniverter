@@ -1,11 +1,11 @@
 import streamlit as st
 
 st.title("🌎Unit Converter App") 
-st.markdown("### Converts Length, Weight, And Time Instantly")
+st.markdown("### Converts Length, Weight,Temperature, And Time Instantly")
 
 st.write("Welcome! Select a category, enter a value, and get the converted result in real-time.")
 
-category = st.selectbox("Choose a category", ["Length", "Weight", "Time"])
+category = st.selectbox("Choose a category", ["Length", "Weight","Temperature","Time"])
 
 # Define a function to convert units based on category and unit selection
 def convert_units(category, value, unit):
@@ -22,6 +22,12 @@ def convert_units(category, value, unit):
         
         elif unit == "Pounds to Kilograms":
             return value / 2.20462
+        
+    elif category == "Temperature":
+        if unit == "Fahrenheit (°F) to Celsius (°C)":
+            return (value - 32) * 5/9
+        elif unit == "Celsius (°C) to Fahrenheit (°F)":
+            return (value * 9/5) + 32
 
     elif category == "Time":
         if unit == "Seconds to minutes":
@@ -43,6 +49,8 @@ if category == "Length":
     unit = st.selectbox("📏 Select Conversion", [ "Miles to Kilometers","Kilometers to Miles"])
 elif category == "Weight":
     unit = st.selectbox("⚖ Select Conversion", ["Kilograms to pounds", "Pounds to kilograms"])
+elif category == "Temperature":
+    unit =st.selectbox("🌡 Select Conversion ", ["Fahrenheit (°F) to Celsius (°C)", " Celsius (°C) to Fahrenheit (°F)"])
 elif category == "Time":
     unit = st.selectbox("⏲ Select Conversion", ["Seconds to minutes", "Minutes to seconds", "Minutes to hours", "Hours to minutes", "Hours to Days", "Days to Hours"])
 
